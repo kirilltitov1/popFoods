@@ -9,11 +9,12 @@ import SwiftUI
 
 @main
 struct PopFoodsApp: App {
-    let persistenceController = PersistenceController.shared
+//    @StateObject var appViewModel = AppViewModel()
 
     var body: some Scene {
         WindowGroup {
 			Main.Screen()
+//                .environmentObject(appViewModel)
         }
     }
 }

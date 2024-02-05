@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Dishes {
+extension Recipes {
 	final class ViewModel: ObservableObject {
 		let name: String = "Dishes"
 		let tabBarImageName: String = "fork.knife"

@@ -8,7 +8,7 @@
 import Foundation
 
 extension Main {
-	final class ViewModel {
-		
+    final class ViewModel: ObservableObject {
+        @Published var selectedTab: Int = 0
 	}
 }

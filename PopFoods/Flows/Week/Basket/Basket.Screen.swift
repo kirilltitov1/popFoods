@@ -1,14 +1,14 @@
 //
-//  Dishes.Screen.swift
+//  Basket.Screen.swift
 //  PopFoods
 //
-//  Created by Титов Кирилл Иванович on 24.01.2024.
+//  Created by Титов Кирилл Иванович on 23.01.2024.
 //
 
 import SwiftUI
 import DesignSystem
 
-extension Dishes {
+extension Basket {
 	struct Screen: View {
 
 		@ObservedObject var viewModel: ViewModel = ViewModel()
@@ -23,8 +23,6 @@ extension Dishes {
 	}
 }
 
-struct Dishes_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-		Dishes.Screen()
-    }
+#Preview {
+    Basket.Screen()
 }

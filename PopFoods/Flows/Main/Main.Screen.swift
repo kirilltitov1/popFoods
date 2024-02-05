@@ -10,7 +10,7 @@ import SwiftUI
 extension Main {
 	struct Screen: View {
 
-		@State private var selectedTab: Int = 0
+        @ObservedObject var viewModel: ViewModel = ViewModel()
 
 		var body: some View {
 			NavigationStack {
@@ -19,17 +19,16 @@ extension Main {
 		}
 
 		private var tabs: some View {
-			TabView(selection: $selectedTab) {
+            TabView(selection: $viewModel.selectedTab) {
 				Home.Screen()
 				Week.Screen()
-				Dishes.Screen()
-				Basket.Screen()
+                Recipes.Screen()
+				User.Screen()
 			}
 		}
 	}
 }
-struct MainScreenPreviews: PreviewProvider {
-    static var previews: some View {
-		Main.Screen()
-    }
+
+#Preview {
+    Main.Screen()
 }

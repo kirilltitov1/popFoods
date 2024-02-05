@@ -15,16 +15,26 @@ extension Home {
 
 		var body: some View {
 			NavigationStack {
-
+                VStack {
+                    widgets
+                    Spacer()
+                }
 			}.tabItem {
-				TabItem(title: viewModel.name, imageName: viewModel.tabBarImageName)
+				TabItem(
+                    title: viewModel.name,
+                    imageName: viewModel.tabBarImageName
+                )
 			}
 		}
+        
+        @ViewBuilder
+        private var widgets: some View {
+            Widgets()
+                .aspectRatio(12.0 / 9.0, contentMode: .fit)
+        }
 	}
 }
 
-struct HomeScreenPreviews: PreviewProvider {
-    static var previews: some View {
-		Home.Screen()
-    }
+#Preview {
+    Home.Screen()
 }

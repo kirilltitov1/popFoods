@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 import DesignSystem
 
 extension Week {
@@ -15,16 +16,31 @@ extension Week {
 		
 		var body: some View {
 			NavigationStack {
-
+                VStack {
+                    Calender(
+                        data: viewModel.weeks,
+                        selectedDay: $viewModel.selectedDate
+                    )
+                    .aspectRatio(12.0 / 9.0, contentMode: .fit)
+                    ScrollView(.vertical) {
+                        LazyVStack {
+                            ForEach(1..<10000) {
+                                Text("\($0)")
+                            }
+                        }
+                    }
+                    Spacer()
+                }
 			}.tabItem {
-				TabItem(title: viewModel.name, imageName: viewModel.tabBarImageName)
-			}
-		}
+				TabItem(
+                    title: viewModel.name,
+                    imageName: viewModel.tabBarImageName
+                )
+            }
+        }
 	}
 }
 
-struct WeekScreenPreviews: PreviewProvider {
-    static var previews: some View {
-		Week.Screen()
-    }
+#Preview {
+    Week.Screen()
 }
