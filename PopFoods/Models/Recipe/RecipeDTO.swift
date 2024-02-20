@@ -7,11 +7,15 @@
 
 import Foundation
 
-struct RecipeDTO: Codable {
+struct RecipeDTO: Codable, Identifiable {
+    let id: UUID = UUID()
+    
     let name: String
     let ingredients: [IngredientDTO]
     let instructions: String
     let servingSize: String
     let preparationTime: String
     let description: String
+    let imageUrl: String
+    let time: String
 }

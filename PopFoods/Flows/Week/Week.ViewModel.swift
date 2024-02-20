@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import StringExtenstions
 
 extension Week {
 	final class ViewModel: ObservableObject {
@@ -17,6 +18,11 @@ extension Week {
         @Published var selectedDate = Date()
         
         var weeks: [Date] = Date().datesOfWeek(.currentAndNextOne)
+        var recipes: [String?: [RecipeDTO]] = [
+            Date().dayBefore.getDay: RecipesStubs().recipes.shuffled(),
+            Date().getDay: RecipesStubs().recipes,
+            Date().dayAfter.getDay: RecipesStubs().recipes.shuffled()
+        ]
         
         lazy var weekPages: [[Date]] = weeks.splitIntoChunks(chunkSize: 7)
     }

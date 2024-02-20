@@ -33,10 +33,11 @@ public struct CalenderPage: View {
         LazyHStack(spacing: 8) {
             ForEach(data.page) {
                 CalenderCell(data: $0, selectedDay: $selectedDay)
-                    .cornerRadius(10.0)
                     .background(.green)
+                    .clipShape(Circle())
+//                    .cornerRadius(10.0)
             }
-        }.background(.brown)
+        }
     }
 }
 

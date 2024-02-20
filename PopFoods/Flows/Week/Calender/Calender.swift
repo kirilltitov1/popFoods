@@ -27,12 +27,13 @@ struct Calender: View {
     var data: [Date]
     @Binding var selectedDay: Date
     
-    private var pages: [CalenderPage.Model] { data.splitIntoChunks(chunkSize: 7).map { CalenderPage.Model(dates: $0) } }
+    private var pages: [CalenderPage.Model] {
+        data.splitIntoChunks(chunkSize: 7).map { CalenderPage.Model(dates: $0) }
+    }
     
     var body: some View {
         ScrollView(.horizontal) {
             LazyVStack {
-                let times = Int(data.count / 7)
                 LazyHStack(spacing: 8) {
                     ForEach(pages) { page in
                         CalenderPage(data: page, selectedDay: $selectedDay)
@@ -45,6 +46,7 @@ struct Calender: View {
         .contentMargins(.horizontal, 8)
         .scrollTargetBehavior(.viewAligned)
         .scrollIndicators(.never)
+        .background(.clear)
     }
 }
 

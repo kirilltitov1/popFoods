@@ -11,7 +11,7 @@ import DesignSystem
 extension User {
     struct Screen: View {
         
-        @ObservedObject var viewModel: ViewModel = ViewModel()
+        @StateObject var viewModel: ViewModel = ViewModel()
         
         var body: some View {
             NavigationStack {

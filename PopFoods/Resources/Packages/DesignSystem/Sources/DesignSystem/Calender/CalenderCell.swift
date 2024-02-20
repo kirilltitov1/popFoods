@@ -27,13 +27,13 @@ public struct CalenderCell: View {
                     Text(data.date.getMonth)
                         .font(.caption)
                         .padding(.bottom)
-                        .padding(.horizontal, 4)
-                }
-                .background(backgroundColor)
-                .onTapGesture {
-                    selectedDay = data.date
+                        .padding(.horizontal, 6)
                 }
             }
+        }
+        .background(backgroundColor)
+        .onTapGesture {
+            selectedDay = data.date
         }
     }
     

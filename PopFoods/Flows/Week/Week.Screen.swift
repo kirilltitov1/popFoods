@@ -9,30 +9,53 @@ import SwiftUI
 import Charts
 import DesignSystem
 
+//List(viewModel.recipes[appvm.selectedDay.getDay] ?? [], id: \.id)
+
 extension Week {
 	struct Screen: View {
 
-		@ObservedObject var viewModel: ViewModel = ViewModel()
+		@StateObject var viewModel: ViewModel = ViewModel()
+        @EnvironmentObject var appvm: AppViewModel
+        @State var selectedDate: Date = Date()
+        @State var selectedRecipe: RecipeDTO?
 		
 		var body: some View {
 			NavigationStack {
                 VStack {
                     Calender(
                         data: viewModel.weeks,
-                        selectedDay: $viewModel.selectedDate
+                        selectedDay: $appvm.selectedDay
                     )
                     .aspectRatio(12.0 / 9.0, contentMode: .fit)
-                    ScrollView(.vertical) {
-                        LazyVStack {
-                            ForEach(1..<10000) {
-                                Text("\($0)")
+                    GeometryReader { geometry in
+                        ScrollView(.vertical) {
+                            LazyVStack {
+                                List {
+                                    ForEach(viewModel.recipes[appvm.selectedDay.getDay] ?? []) { data in
+                                        RecipeCell(data: data)
+                                            .onTapGesture {
+                                                selectedRecipe = data
+                                            }
+                                    }
+                                }
+                                .frame(
+                                    width: geometry.size.width + 20,
+                                    height: geometry.size.height
+                                )
+                                .offset(y: -40)
                             }
+                            .safeAreaPadding()
                         }
+                        .edgesIgnoringSafeArea(.bottom)
+                        Spacer()
                     }
-                    Spacer()
                 }
-			}.tabItem {
-				TabItem(
+            }
+            .sheet(item: $selectedRecipe) { recipe in
+                ScreenRecipe(data: recipe)
+            }
+            .tabItem {
+                TabItem(
                     title: viewModel.name,
                     imageName: viewModel.tabBarImageName
                 )
@@ -43,4 +66,5 @@ extension Week {
 
 #Preview {
     Week.Screen()
+        .environmentObject(AppViewModel())
 }

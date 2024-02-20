@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct PopFoodsApp: App {
-//    @StateObject var appViewModel = AppViewModel()
+    @ObservedObject var appViewModel = AppViewModel()
 
     var body: some Scene {
         WindowGroup {
 			Main.Screen()
-//                .environmentObject(appViewModel)
+                .environmentObject(appViewModel)
         }
     }
 }
