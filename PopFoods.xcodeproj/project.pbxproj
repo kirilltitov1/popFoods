@@ -55,6 +55,7 @@
 		EF854DDF2B6C3F060042E5D1 /* CustomIngredientDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF854DDE2B6C3F060042E5D1 /* CustomIngredientDTO.swift */; };
 		EF854DE52B6DB2CB0042E5D1 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF854DE42B6DB2CB0042E5D1 /* UserDTO.swift */; };
 		EFDABCD52B759CB3003F1217 /* Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDABCD42B759CB3003F1217 /* Calender.swift */; };
+		EFFAD7692BAB7EAF00FCE207 /* InstructionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD7682BAB7EAF00FCE207 /* InstructionDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		EF854DDE2B6C3F060042E5D1 /* CustomIngredientDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIngredientDTO.swift; sourceTree = "<group>"; };
 		EF854DE42B6DB2CB0042E5D1 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		EFDABCD42B759CB3003F1217 /* Calender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calender.swift; sourceTree = "<group>"; };
+		EFFAD7682BAB7EAF00FCE207 /* InstructionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -433,6 +435,7 @@
 			isa = PBXGroup;
 			children = (
 				EF854DD82B6B09EE0042E5D1 /* RecipeDTO.swift */,
+				EFFAD7682BAB7EAF00FCE207 /* InstructionDTO.swift */,
 				EF854DDC2B6C3EFD0042E5D1 /* CustomRecipeDTO.swift */,
 			);
 			path = Recipe;
@@ -641,6 +644,7 @@
 				EF854DD42B6AED730042E5D1 /* FPCPieWidget.swift in Sources */,
 				EF0C03D72B7184C10010B352 /* AppViewModel.swift in Sources */,
 				EF854DBC2B69A5980042E5D1 /* WidgetsViewModel.swift in Sources */,
+				EFFAD7692BAB7EAF00FCE207 /* InstructionDTO.swift in Sources */,
 				5E3610C22B574CA40021675F /* PopFoods.xcdatamodeld in Sources */,
 				EF0C03DA2B7598BF0010B352 /* RecipeCell.swift in Sources */,
 				5E3611382B5F185E0021675F /* Main.Screen.swift in Sources */,

@@ -9,7 +9,7 @@ import Foundation
 
 struct IngredientDTO: Codable {
     let name: String
-    let fat: Int
-    let protein: Int
-    let carbohydrates: Int
+    let fat: Double
+    let protein: Double
+    let carbohydrates: Double
 }

@@ -11,5 +11,11 @@ extension Recipes {
 	final class ViewModel: ObservableObject {
 		let name: String = "Dishes"
 		let tabBarImageName: String = "fork.knife"
+        
+        var recipes: [String?: [RecipeDTO]] = [
+            Date().dayBefore.getDay: RecipesStubs().recipes.shuffled(),
+            Date().getDay: RecipesStubs().recipes,
+            Date().dayAfter.getDay: RecipesStubs().recipes.shuffled()
+        ]
 	}
 }
