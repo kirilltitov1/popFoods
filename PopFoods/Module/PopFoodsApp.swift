@@ -15,6 +15,9 @@ struct PopFoodsApp: App {
         WindowGroup {
 			Main.Screen()
                 .environmentObject(appViewModel)
+                .modelContainer(for: RecipeDTO.self)
+                .modelContainer(for: IngredientDTO.self)
+                .modelContainer(for: InstructionDTO.self)
         }
     }
 }

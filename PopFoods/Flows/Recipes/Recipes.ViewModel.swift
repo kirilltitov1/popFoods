@@ -17,5 +17,9 @@ extension Recipes {
             Date().getDay: RecipesStubs().recipes,
             Date().dayAfter.getDay: RecipesStubs().recipes.shuffled()
         ]
+        
+        var favoriteRecipes: [RecipeDTO] = [
+            
+        ]
 	}
 }

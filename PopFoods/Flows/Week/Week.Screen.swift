@@ -9,11 +9,9 @@ import SwiftUI
 import Charts
 import DesignSystem
 
-//List(viewModel.recipes[appvm.selectedDay.getDay] ?? [], id: \.id)
 
 extension Week {
 	struct Screen: View {
-
 		@StateObject var viewModel: ViewModel = ViewModel()
         @EnvironmentObject var appvm: AppViewModel
         @State var selectedDate: Date = Date()
@@ -29,24 +27,26 @@ extension Week {
                     .aspectRatio(12.0 / 9.0, contentMode: .fit)
                     GeometryReader { geometry in
                         ScrollView(.vertical) {
-                            LazyVStack {
-                                List {
-                                    ForEach(viewModel.recipes[appvm.selectedDay.getDay] ?? []) { data in
-                                        RecipeCell(data: data)
-                                            .onTapGesture {
-                                                selectedRecipe = data
-                                            }
-                                    }
+                            List {
+                                ForEach(viewModel.recipes[appvm.selectedDay.getDay] ?? []) { data in
+                                    RecipeCell(data: data)
+                                        .onTapGesture {
+                                            selectedRecipe = data
+                                        }
+                                        .listRowSeparator(.hidden)
+                                        .background(Divider().offset(y: -5), alignment: .bottom)
                                 }
-                                .frame(
-                                    width: geometry.size.width + 20,
-                                    height: geometry.size.height
-                                )
-                                .offset(y: -40)
                             }
-                            .safeAreaPadding()
+                            .listStyle(PlainListStyle())
+                            .frame(
+                                width: geometry.size.width,
+                                height: geometry.size.height
+                            )
+//                            .safeAreaPadding()
                         }
-                        .edgesIgnoringSafeArea(.bottom)
+//                        .padding(.horizontal, -20)
+                        .scrollDisabled(true)
+//                        .edgesIgnoringSafeArea(.vertical)
                         Spacer()
                     }
                 }

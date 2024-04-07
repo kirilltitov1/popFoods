@@ -32,6 +32,7 @@ extension Main {
 				User.Screen()
                     .tag(3)
 			}
+            .edgesIgnoringSafeArea(.bottom)
 		}
 	}
 }

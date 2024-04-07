@@ -9,6 +9,7 @@ import Foundation
 
 final class AppViewModel: ObservableObject {
     @Published var userSettings = UserSettings()
+//    @Published var userRecipes = 
     @Published var selectedDay: Date = Date()
     @Published var selectedTab: Int = 0
 }

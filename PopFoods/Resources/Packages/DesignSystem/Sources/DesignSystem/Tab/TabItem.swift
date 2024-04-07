@@ -27,7 +27,7 @@ public struct TabItem: View {
 	}
 
     public var body: some View {
-		VStack {
+        VStack(alignment: .center) {
 			Image(systemName: imageName ?? "")
 				.resizable()
 				.scaledToFit()

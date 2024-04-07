@@ -4,16 +4,10 @@
     "%@" : {
 
     },
-    "Add Item" : {
-
-    },
     "Hello, World!" : {
 
     },
-    "Item at %@" : {
-
-    },
-    "Select an item" : {
+    "Настройки фильтров" : {
 
     }
   },

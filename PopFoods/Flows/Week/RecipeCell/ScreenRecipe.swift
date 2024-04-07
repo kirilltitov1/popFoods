@@ -14,7 +14,6 @@ struct ScreenRecipe: View {
     
     var body: some View {
         VStack {
-            
             Image(data.name)
                 .resizable()
                 .scaledToFit()
@@ -51,7 +50,7 @@ struct ScreenRecipe: View {
     }
     
     private var descriptionView: some View {
-        Text(data.description)
+        Text(data.descript)
             .font(.subheadline)
             .padding(.horizontal)
             .opacity(0.7)
@@ -166,25 +165,22 @@ struct ScreenRecipe: View {
                 instructions: [
                     InstructionDTO(
                         instruction: "Поджарьте куриное филе до готовности, добавьте нарезанные морковь и лук.",
-                        time: 10,
-                        ingredients: [
-                            IngredientDTO(name: "Куриное филе", fat: 3.6, protein: 31.0, carbohydrates: 0.0),
-                            IngredientDTO(name: "Морковь", fat: 0.2, protein: 0.9, carbohydrates: 9.6),
-                            IngredientDTO(name: "Лук", fat: 0.1, protein: 1.1, carbohydrates: 10.0)
-                        ]
+                        time: 10
                     ),
                     InstructionDTO(
                         instruction: "Влейте воду, добавьте гречку и тушите до готовности.",
-                        time: 20,
-                        ingredients: [
-                            IngredientDTO(name: "Гречка", fat: 3.4, protein: 13.3, carbohydrates: 71.5)
-                        ]
+                        time: 20
                     )
                 ],
                 servingSize: "4 порции",
-                preparationTime: "30",
+                preparationTime: "30 минут",
                 description: "Питательное и сытное блюдо на каждый день.",
-                imageUrl: "<здесь_ссылка_на_изображение>"
+                imageUrl: "<здесь_ссылка_на_изображение>",
+                ingredients: [
+                    IngredientDTO(name: "Куриное филе", fat: 3.6, protein: 31.0, carbohydrates: 0.0),
+                    IngredientDTO(name: "Морковь", fat: 0.2, protein: 0.9, carbohydrates: 9.6),
+                    IngredientDTO(name: "Лук", fat: 0.1, protein: 1.1, carbohydrates: 10.0)
+                ]
             )
     )
 }
