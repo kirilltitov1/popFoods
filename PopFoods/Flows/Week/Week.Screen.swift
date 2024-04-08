@@ -16,6 +16,7 @@ extension Week {
         @EnvironmentObject var appvm: AppViewModel
         @State var selectedDate: Date = Date()
         @State var selectedRecipe: RecipeDTO?
+        @Environment(\.modelContext) private var modelContext
 		
 		var body: some View {
 			NavigationStack {
@@ -28,7 +29,7 @@ extension Week {
                     GeometryReader { geometry in
                         ScrollView(.vertical) {
                             List {
-                                ForEach(viewModel.recipes[appvm.selectedDay.getDay] ?? []) { data in
+                                ForEach(viewModel.recipesPerDate[appvm.selectedDay.getDay] ?? []) { data in
                                     RecipeCell(data: data)
                                         .onTapGesture {
                                             selectedRecipe = data

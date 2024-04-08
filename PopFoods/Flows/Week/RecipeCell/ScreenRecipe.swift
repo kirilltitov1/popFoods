@@ -159,28 +159,28 @@ struct ScreenRecipe: View {
 
 #Preview {
     ScreenRecipe(
-        data:
-            RecipeDTO(
-                name: "Гречка с куриным филе и овощами",
-                instructions: [
-                    InstructionDTO(
-                        instruction: "Поджарьте куриное филе до готовности, добавьте нарезанные морковь и лук.",
-                        time: 10
-                    ),
-                    InstructionDTO(
-                        instruction: "Влейте воду, добавьте гречку и тушите до готовности.",
-                        time: 20
-                    )
-                ],
-                servingSize: "4 порции",
-                preparationTime: "30 минут",
-                description: "Питательное и сытное блюдо на каждый день.",
-                imageUrl: "<здесь_ссылка_на_изображение>",
-                ingredients: [
-                    IngredientDTO(name: "Куриное филе", fat: 3.6, protein: 31.0, carbohydrates: 0.0),
-                    IngredientDTO(name: "Морковь", fat: 0.2, protein: 0.9, carbohydrates: 9.6),
-                    IngredientDTO(name: "Лук", fat: 0.1, protein: 1.1, carbohydrates: 10.0)
-                ]
-            )
+        data: RecipesStubs().recipes.first!
+//            RecipeDTO(
+//                name: "Гречка с куриным филе и овощами",
+//                instructions: [
+//                    InstructionDTO(
+//                        instruction: "Поджарьте куриное филе до готовности, добавьте нарезанные морковь и лук.",
+//                        time: 10
+//                    ),
+//                    InstructionDTO(
+//                        instruction: "Влейте воду, добавьте гречку и тушите до готовности.",
+//                        time: 20
+//                    )
+//                ],
+//                servingSize: "4 порции",
+//                preparationTime: "30 минут",
+//                description: "Питательное и сытное блюдо на каждый день.",
+//                imageUrl: "<здесь_ссылка_на_изображение>",
+//                ingredients: [
+//                    IngredientDTO(name: "Куриное филе", fat: 3.6, protein: 31.0, carbohydrates: 0.0),
+//                    IngredientDTO(name: "Морковь", fat: 0.2, protein: 0.9, carbohydrates: 9.6),
+//                    IngredientDTO(name: "Лук", fat: 0.1, protein: 1.1, carbohydrates: 10.0)
+//                ]
+//            )
     )
 }

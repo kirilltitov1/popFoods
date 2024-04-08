@@ -11,16 +11,14 @@ import SwiftData
 @Model
 final class IngredientDTO {
     @Attribute(.unique)
-    let id: UUID
+    var id: UUID
     
-    let name: String
-    let fat: Double
-    let protein: Double
-    let carbohydrates: Double
-    
-    // MARK: Relationships
-    @Relationship(deleteRule: .nullify, inverse: \RecipeDTO.instructions)
-    var recipes: [RecipeDTO]?
+    var name: String
+    var fat: Double
+    var protein: Double
+    var carbohydrates: Double
+
+    var recipes: [RecipeDTO]
     
     init(
         id: UUID = UUID(),
@@ -28,7 +26,7 @@ final class IngredientDTO {
         fat: Double,
         protein: Double,
         carbohydrates: Double,
-        recipes: [RecipeDTO]? = nil
+        recipes: [RecipeDTO]
     ) {
         self.id = id
         self.name = name

@@ -13,19 +13,18 @@ final class InstructionDTO: Identifiable {
     @Attribute(.unique)
     var id: UUID = UUID()
     
-    let instruction: String
-    let time: Int
+    var instruction: String
+    var time: Int
+    
     var recipe: RecipeDTO?
     
     init(
         id: UUID = UUID(),
         instruction: String,
-        time: Int,
-        recipe: RecipeDTO? = nil
+        time: Int
     ) {
         self.id = id
         self.instruction = instruction
         self.time = time
-        self.recipe = recipe
     }
 }
