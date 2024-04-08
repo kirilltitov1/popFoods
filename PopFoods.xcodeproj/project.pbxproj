@@ -61,6 +61,7 @@
 		EFA7145D2BC4588500260A8D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EFA7145C2BC4588500260A8D /* Base */; };
 		EFA714612BC4588500260A8D /* PopFoodsIntentsUI.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EFA714552BC4588500260A8D /* PopFoodsIntentsUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EFA714642BC4588500260A8D /* PopFoodsIntents.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EFA7144A2BC4588500260A8D /* PopFoodsIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EFA7146E2BC4594000260A8D /* PopFoodsIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EFA7146D2BC4594000260A8D /* PopFoodsIntent.intentdefinition */; };
 		EFDABCD52B759CB3003F1217 /* Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDABCD42B759CB3003F1217 /* Calender.swift */; };
 		EFFAD7692BAB7EAF00FCE207 /* InstructionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD7682BAB7EAF00FCE207 /* InstructionDTO.swift */; };
 		EFFAD76C2BB3655A00FCE207 /* RecipeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD76B2BB3655A00FCE207 /* RecipeFilter.swift */; };
@@ -175,6 +176,7 @@
 		EFA714592BC4588500260A8D /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
 		EFA7145C2BC4588500260A8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		EFA7145E2BC4588500260A8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFA7146D2BC4594000260A8D /* PopFoodsIntent.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = PopFoodsIntent.intentdefinition; sourceTree = "<group>"; };
 		EFDABCD42B759CB3003F1217 /* Calender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calender.swift; sourceTree = "<group>"; };
 		EFFAD7682BAB7EAF00FCE207 /* InstructionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionDTO.swift; sourceTree = "<group>"; };
 		EFFAD76B2BB3655A00FCE207 /* RecipeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFilter.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				5E9DF8292B61757F00DA2602 /* PopFoods.entitlements */,
+				EFA7146C2BC4591100260A8D /* Intents */,
 				5E3610E42B574E310021675F /* Resources */,
 				5E3610E52B574E4D0021675F /* Services */,
 				5E3610E62B574E5C0021675F /* Module */,
@@ -566,6 +569,14 @@
 			path = PopFoodsIntentsUI;
 			sourceTree = "<group>";
 		};
+		EFA7146C2BC4591100260A8D /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				EFA7146D2BC4594000260A8D /* PopFoodsIntent.intentdefinition */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
 		EFDABCD32B759CA5003F1217 /* Calender */ = {
 			isa = PBXGroup;
 			children = (
@@ -797,6 +808,7 @@
 				5E3611332B5F172C0021675F /* Home.Screen.swift in Sources */,
 				EF009B362B68724D00747D49 /* Widgets.swift in Sources */,
 				EFFAD7702BB3687600FCE207 /* RecipeFilterScreen.swift in Sources */,
+				EFA7146E2BC4594000260A8D /* PopFoodsIntent.intentdefinition in Sources */,
 				5E3611512B6069750021675F /* Week.ViewModel.swift in Sources */,
 				EFA714452BC3242300260A8D /* AppContainer.swift in Sources */,
 				5E3611462B5F1F410021675F /* Week.Screen.swift in Sources */,
