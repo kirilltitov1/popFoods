@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class IngredientDTO {
+final class IngredientDTO: Identifiable {
     @Attribute(.unique)
     var id: UUID
     
@@ -18,7 +18,6 @@ final class IngredientDTO {
     var protein: Double
     var carbohydrates: Double
 
-    @Relationship
     var recipes: [RecipeDTO]
     
     init(
@@ -35,5 +34,9 @@ final class IngredientDTO {
         self.protein = protein
         self.carbohydrates = carbohydrates
         self.recipes = recipes
+    }
+    
+    deinit {
+        print("deinit: \(name)")
     }
 }

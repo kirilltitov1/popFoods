@@ -18,6 +18,8 @@ struct PopFoodsApp: App {
 			Main.Screen()
         }
         .environmentObject(appViewModel)
+        .modelContainer(for: RecipeDTO.self)
+        .modelContainer(for: IngredientDTO.self)
         .modelContainer(appContainer)
     }
 }
