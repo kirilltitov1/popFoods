@@ -11,7 +11,7 @@ import SwiftData
 @MainActor
 let appContainer: ModelContainer = {
     do {
-        let container = try ModelContainer(for: RecipeDTO.self, InstructionDTO.self, IngredientDTO.self)
+        let container = try ModelContainer(for: RecipeDTO.self, IngredientDTO.self)
         
         // Make sure the persistent store is empty. If it's not, return the non-empty container.
         var itemFetchDescriptor = FetchDescriptor<RecipeDTO>()

@@ -18,6 +18,7 @@ final class IngredientDTO {
     var protein: Double
     var carbohydrates: Double
 
+    @Relationship
     var recipes: [RecipeDTO]
     
     init(

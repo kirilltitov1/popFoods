@@ -81,24 +81,16 @@ struct ScreenRecipe: View {
     }
     
     private var instructionsView: some View {
-        ForEach(data.instructions) { instruction in
-            HStack(alignment: .top) {
-                Text("\(instruction.time)" + " min"~)
-                    .font(.body)
-                    .bold()
-                    .padding(.leading, 16)
-                Text("\(instruction.instruction)")
-                    .font(.body)
-                    .truncationMode(.tail)
-                    .padding(.leading, 8)
-                    .padding(.trailing, 16)
-            }
-        }
+        Text("\(data.instructions)")
+            .font(.body)
+            .truncationMode(.tail)
+            .padding(.leading, 8)
+            .padding(.trailing, 16)
     }
     
     private var preparationTimeView: some View {
         VStack {
-            Text("\(data.time)" + " min"~)
+            Text("\(data.preparationTime)" + " min"~)
                 .bold()
                 .font(.footnote)
             Text("time"~)

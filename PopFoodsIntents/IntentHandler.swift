@@ -6,6 +6,7 @@
 //
 
 import Intents
+//import PopFoods
 
 // As an example, this class is set up to handle Message intents.
 // You will want to replace this or add other intents as appropriate.
@@ -19,9 +20,9 @@ import Intents
 class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessagesIntentHandling, INSetMessageAttributeIntentHandling {
     
     override func handler(for intent: INIntent) -> Any {
-        // This is the default implementation.  If you want different objects to handle different intents,
-        // you can override this and return the handler you want for that particular intent.
-        
+//        if intent as simpleintent {
+            
+//        }
         return self
     }
     

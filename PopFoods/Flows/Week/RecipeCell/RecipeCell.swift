@@ -30,7 +30,7 @@ struct RecipeCell: View {
                 .padding(.leading)
                 .padding(.top, 1)
                 .opacity(0.7)
-            Text("\(data.time)" + " min"~)
+            Text("\(data.preparationTime)" + " min"~)
                 .bold()
                 .padding()
         }

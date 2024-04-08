@@ -27,18 +27,11 @@ struct RecipesStubs {
         let oliveOil = IngredientDTO(name: "Оливковое масло", fat: 100.0, protein: 0.0, carbohydrates: 0.0, recipes: [])
         let garlic = IngredientDTO(name: "Чеснок", fat: 0.5, protein: 6.0, carbohydrates: 33.0, recipes: [])
         let egg = IngredientDTO(name: "Яйцо", fat: 5.3, protein: 6.3, carbohydrates: 0.6, recipes: [])
-        
-        // Инструкции
-        let fryChickenInstruction = InstructionDTO(instruction: "Поджарьте куриное филе до готовности, добавьте нарезанные морковь и лук.", time: 10)
-        let cookBuckwheatInstruction = InstructionDTO(instruction: "Влейте воду, добавьте гречку и тушите до готовности.", time: 20)
-        let mixSmoothieInstruction = InstructionDTO(instruction: "Все ингредиенты смешайте в блендере до однородной массы.", time: 5)
-        let prepareSaladInstruction = InstructionDTO(instruction: "На салатные листья выложите тунца, нарезанные авокадо и яйца, заправьте оливковым маслом.", time: 15)
-        let makeCutletsInstruction = InstructionDTO(instruction: "Измельчите куриное филе, шпинат, лук и чеснок, добавьте яйцо, соль и перец, сформируйте котлеты и обжарьте.", time: 30)
-        
+                
         // Создаем рецепты
         let buckwheatWithChickenRecipe = RecipeDTO(
             name: "Гречка с куриным филе и овощами",
-            instructions: [fryChickenInstruction, cookBuckwheatInstruction],
+            instructions: "Поджарьте куриное филе до готовности, добавьте нарезанные морковь и лук.\nВлейте воду, добавьте гречку и тушите до готовности.",
             servingSize: "4 порции",
             preparationTime: "30 минут",
             description: "Питательное и сытное блюдо на каждый день.",
@@ -48,7 +41,7 @@ struct RecipesStubs {
         
         let smoothieRecipe = RecipeDTO(
             name: "Смузи с авокадо и шпинатом",
-            instructions: [mixSmoothieInstruction],
+            instructions: "Все ингредиенты смешайте в блендере до однородной массы.",
             servingSize: "2 порции",
             preparationTime: "5 минут",
             description: "Освежающий и полезный смузи для энергичного начала дня.",
@@ -58,7 +51,7 @@ struct RecipesStubs {
         
         let saladWithTunaRecipe = RecipeDTO(
             name: "Салат с тунцом, авокадо и яйцом",
-            instructions: [prepareSaladInstruction],
+            instructions: "На салатные листья выложите тунца, нарезанные авокадо и яйца, заправьте оливковым маслом.",
             servingSize: "2 порции",
             preparationTime: "20 минут",
             description: "Легкий и полезный салат для обеда или ужина.",
@@ -68,7 +61,7 @@ struct RecipesStubs {
         
         let chickenCutletsWithSpinachRecipe = RecipeDTO(
             name: "Куриные котлеты со шпинатом",
-            instructions: [makeCutletsInstruction],
+            instructions: "Измельчите куриное филе, шпинат, лук и чеснок, добавьте яйцо, соль и перец, сформируйте котлеты и обжарьте.",
             servingSize: "4 порции",
             preparationTime: "45 минут",
             description: "Нежные и сочные куриные котлеты с нотками шпината.",

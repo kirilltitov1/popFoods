@@ -62,8 +62,11 @@
 		EFA714612BC4588500260A8D /* PopFoodsIntentsUI.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EFA714552BC4588500260A8D /* PopFoodsIntentsUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EFA714642BC4588500260A8D /* PopFoodsIntents.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EFA7144A2BC4588500260A8D /* PopFoodsIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EFA7146E2BC4594000260A8D /* PopFoodsIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EFA7146D2BC4594000260A8D /* PopFoodsIntent.intentdefinition */; };
+		EFA714712BC4605600260A8D /* PopFoodsIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EFA7146D2BC4594000260A8D /* PopFoodsIntent.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		EFA714722BC4605600260A8D /* PopFoodsIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EFA7146D2BC4594000260A8D /* PopFoodsIntent.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		EFA714732BC4605700260A8D /* PopFoodsIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EFA7146D2BC4594000260A8D /* PopFoodsIntent.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		EFA714742BC4605800260A8D /* PopFoodsIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EFA7146D2BC4594000260A8D /* PopFoodsIntent.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		EFDABCD52B759CB3003F1217 /* Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDABCD42B759CB3003F1217 /* Calender.swift */; };
-		EFFAD7692BAB7EAF00FCE207 /* InstructionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD7682BAB7EAF00FCE207 /* InstructionDTO.swift */; };
 		EFFAD76C2BB3655A00FCE207 /* RecipeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD76B2BB3655A00FCE207 /* RecipeFilter.swift */; };
 		EFFAD76E2BB3679D00FCE207 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD76D2BB3679D00FCE207 /* ViewModel.swift */; };
 		EFFAD7702BB3687600FCE207 /* RecipeFilterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAD76F2BB3687600FCE207 /* RecipeFilterScreen.swift */; };
@@ -177,8 +180,9 @@
 		EFA7145C2BC4588500260A8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		EFA7145E2BC4588500260A8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFA7146D2BC4594000260A8D /* PopFoodsIntent.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = PopFoodsIntent.intentdefinition; sourceTree = "<group>"; };
+		EFA7146F2BC459B100260A8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EFA714702BC459FA00260A8D /* PopFoodsIntentsUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PopFoodsIntentsUI.entitlements; sourceTree = "<group>"; };
 		EFDABCD42B759CB3003F1217 /* Calender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calender.swift; sourceTree = "<group>"; };
-		EFFAD7682BAB7EAF00FCE207 /* InstructionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionDTO.swift; sourceTree = "<group>"; };
 		EFFAD76B2BB3655A00FCE207 /* RecipeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFilter.swift; sourceTree = "<group>"; };
 		EFFAD76D2BB3679D00FCE207 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		EFFAD76F2BB3687600FCE207 /* RecipeFilterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFilterScreen.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 		5E3610B42B574CA30021675F /* PopFoods */ = {
 			isa = PBXGroup;
 			children = (
+				EFA7146F2BC459B100260A8D /* Info.plist */,
 				5E9DF8292B61757F00DA2602 /* PopFoods.entitlements */,
 				EFA7146C2BC4591100260A8D /* Intents */,
 				5E3610E42B574E310021675F /* Resources */,
@@ -442,14 +447,6 @@
 			path = RecipeCell;
 			sourceTree = "<group>";
 		};
-		EF7EF96B2BC2141C00EC8584 /* Instruction */ = {
-			isa = PBXGroup;
-			children = (
-				EFFAD7682BAB7EAF00FCE207 /* InstructionDTO.swift */,
-			);
-			path = Instruction;
-			sourceTree = "<group>";
-		};
 		EF854DBD2B69A8F70042E5D1 /* FPCChartWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,7 +508,6 @@
 			children = (
 				EF854DE32B6DB2290042E5D1 /* User */,
 				EF854DE02B6DB1780042E5D1 /* Recipe */,
-				EF7EF96B2BC2141C00EC8584 /* Instruction */,
 				EF854DE22B6DB18C0042E5D1 /* Ingredient */,
 			);
 			path = DTOModels;
@@ -562,6 +558,7 @@
 		EFA714582BC4588500260A8D /* PopFoodsIntentsUI */ = {
 			isa = PBXGroup;
 			children = (
+				EFA714702BC459FA00260A8D /* PopFoodsIntentsUI.entitlements */,
 				EFA714592BC4588500260A8D /* IntentViewController.swift */,
 				EFA7145B2BC4588500260A8D /* MainInterface.storyboard */,
 				EFA7145E2BC4588500260A8D /* Info.plist */,
@@ -830,7 +827,6 @@
 				EF854DD42B6AED730042E5D1 /* FPCPieWidget.swift in Sources */,
 				EF0C03D72B7184C10010B352 /* AppViewModel.swift in Sources */,
 				EF854DBC2B69A5980042E5D1 /* WidgetsViewModel.swift in Sources */,
-				EFFAD7692BAB7EAF00FCE207 /* InstructionDTO.swift in Sources */,
 				5E3610C22B574CA40021675F /* PopFoods.xcdatamodeld in Sources */,
 				EF0C03DA2B7598BF0010B352 /* RecipeCell.swift in Sources */,
 				5E3611382B5F185E0021675F /* Main.Screen.swift in Sources */,
@@ -844,6 +840,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFA714742BC4605800260A8D /* PopFoodsIntent.intentdefinition in Sources */,
 				5E3610CC2B574CA40021675F /* PopFoodsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -853,6 +850,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E3610D82B574CA40021675F /* PopFoodsUITestsLaunchTests.swift in Sources */,
+				EFA714732BC4605700260A8D /* PopFoodsIntent.intentdefinition in Sources */,
 				5E3610D62B574CA40021675F /* PopFoodsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -861,6 +859,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFA714722BC4605600260A8D /* PopFoodsIntent.intentdefinition in Sources */,
 				EFA7144F2BC4588500260A8D /* IntentHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -869,6 +868,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFA714712BC4605600260A8D /* PopFoodsIntent.intentdefinition in Sources */,
 				EFA7145A2BC4588500260A8D /* IntentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1037,6 +1037,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PopFoods/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1069,6 +1070,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PopFoods/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1168,6 +1170,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = PopFoodsIntentsUI/PopFoodsIntentsUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -1199,6 +1202,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = PopFoodsIntentsUI/PopFoodsIntentsUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
