@@ -7,7 +7,7 @@
 		<key>PopFoods.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<key>PopFoodsIntents.xcscheme_^#shared#^_</key>
 		<dict>
@@ -39,6 +39,24 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5E3610B12B574CA30021675F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EFA714492BC4588500260A8D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EFA714542BC4588500260A8D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
