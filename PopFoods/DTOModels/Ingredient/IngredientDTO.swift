@@ -36,7 +36,7 @@ final class IngredientDTO: Identifiable {
         self.recipes = recipes
     }
     
-    deinit {
-        print("deinit: \(name)")
-    }
+//    deinit {
+//        print("deinit: \(name)")
+//    }
 }
