@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -36,7 +36,6 @@
 		EF0C03DC2B75BA760010B352 /* RecipesStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0C03DB2B75BA760010B352 /* RecipesStubs.swift */; };
 		EF0C03E12B8559340010B352 /* ScreenRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0C03E02B8559340010B352 /* ScreenRecipe.swift */; };
 		EF7EF9642BC1FB3900EC8584 /* UserRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7EF9632BC1FB3900EC8584 /* UserRecipes.swift */; };
-		EF854DBA2B69A4730042E5D1 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = EF854DB92B69A4730042E5D1 /* DesignSystem */; };
 		EF854DBC2B69A5980042E5D1 /* WidgetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF854DBB2B69A5980042E5D1 /* WidgetsViewModel.swift */; };
 		EF854DBF2B69A9170042E5D1 /* FPCChartWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF854DBE2B69A9170042E5D1 /* FPCChartWidget.swift */; };
 		EF854DC12B69A9200042E5D1 /* FPCChartWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF854DC02B69A9200042E5D1 /* FPCChartWidgetViewModel.swift */; };
@@ -66,6 +65,7 @@
 		EFA714722BC4605600260A8D /* PopFoodsIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EFA7146D2BC4594000260A8D /* PopFoodsIntent.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		EFA714732BC4605700260A8D /* PopFoodsIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EFA7146D2BC4594000260A8D /* PopFoodsIntent.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		EFA714742BC4605800260A8D /* PopFoodsIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EFA7146D2BC4594000260A8D /* PopFoodsIntent.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		EFC7EB8C2BC84E04006AD6A7 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = EFC7EB8B2BC84E04006AD6A7 /* DesignSystem */; };
 		EFDABCD52B759CB3003F1217 /* Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDABCD42B759CB3003F1217 /* Calender.swift */; };
 		EFE0838B2BC4A7140042AE1F /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE0838A2BC4A7140042AE1F /* PreviewContainer.swift */; };
 		EFE0838D2BC4A77F0042AE1F /* RecipeSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE0838C2BC4A77F0042AE1F /* RecipeSamples.swift */; };
@@ -198,7 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E9DF82B2B61760C00DA2602 /* StoreKit.framework in Frameworks */,
-				EF854DBA2B69A4730042E5D1 /* DesignSystem in Frameworks */,
+				EFC7EB8C2BC84E04006AD6A7 /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +311,7 @@
 			children = (
 				EF854DE92B6FD0210042E5D1 /* Playgrounds */,
 				EF854DCC2B69B7920042E5D1 /* Localization */,
-				5E3611472B5F20ED0021675F /* Packages */,
+				5E3611472B5F20ED0021675F /* SPM */,
 				5E3610B92B574CA40021675F /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -405,12 +405,12 @@
 			path = Basket;
 			sourceTree = "<group>";
 		};
-		5E3611472B5F20ED0021675F /* Packages */ = {
+		5E3611472B5F20ED0021675F /* SPM */ = {
 			isa = PBXGroup;
 			children = (
 				5E3611482B5F211B0021675F /* DesignSystem */,
 			);
-			path = Packages;
+			path = SPM;
 			sourceTree = "<group>";
 		};
 		5E36114B2B5F27FC0021675F /* Frameworks */ = {
@@ -618,7 +618,7 @@
 			);
 			name = PopFoods;
 			packageProductDependencies = (
-				EF854DB92B69A4730042E5D1 /* DesignSystem */,
+				EFC7EB8B2BC84E04006AD6A7 /* DesignSystem */,
 			);
 			productName = PopFoods;
 			productReference = 5E3610B22B574CA30021675F /* PopFoods.app */;
@@ -734,6 +734,7 @@
 			);
 			mainGroup = 5E3610A92B574CA30021675F;
 			packageReferences = (
+				EFC7EB8A2BC84E04006AD6A7 /* XCLocalSwiftPackageReference "PopFoods/Resources/SPM/DesignSystem" */,
 			);
 			productRefGroup = 5E3610B32B574CA30021675F /* Products */;
 			projectDirPath = "";
@@ -1357,8 +1358,15 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		EFC7EB8A2BC84E04006AD6A7 /* XCLocalSwiftPackageReference "PopFoods/Resources/SPM/DesignSystem" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = PopFoods/Resources/SPM/DesignSystem;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		EF854DB92B69A4730042E5D1 /* DesignSystem */ = {
+		EFC7EB8B2BC84E04006AD6A7 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
 		};
