@@ -18,25 +18,19 @@ final class IngredientDTO: Identifiable {
     var protein: Double
     var carbohydrates: Double
 
-    var recipes: [RecipeDTO]
+    var recipes: [RecipeDTO] = []
     
     init(
         id: UUID = UUID(),
         name: String,
         fat: Double,
         protein: Double,
-        carbohydrates: Double,
-        recipes: [RecipeDTO]
+        carbohydrates: Double
     ) {
         self.id = id
         self.name = name
         self.fat = fat
         self.protein = protein
         self.carbohydrates = carbohydrates
-        self.recipes = recipes
     }
-    
-//    deinit {
-//        print("deinit: \(name)")
-//    }
 }

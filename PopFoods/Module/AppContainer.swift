@@ -22,7 +22,7 @@ let appContainer: ModelContainer = {
         guard try container.mainContext.fetch(itemFetchDescriptor).count == 0 else { return container }
         
         // This code will only run if the persistent store is empty.
-        let items = RecipesStubs().recipes
+        let items = RecipesStubs().recipes1(context: container.mainContext)
         
         for item in items {
             container.mainContext.insert(item)

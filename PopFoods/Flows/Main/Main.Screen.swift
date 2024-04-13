@@ -25,9 +25,10 @@ extension Main {
             TabView(selection: $viewModel.selectedTab) {
 				Home.Screen()
                     .tag(0)
-				Week.Screen()
-                    .tag(1)
                 Recipes.Screen()
+                    .tag(1)
+//                Week.Screen()
+                Basket.Screen()
                     .tag(2)
 				User.Screen()
                     .tag(3)

@@ -12,4 +12,6 @@ struct UserDTO: Codable {
     var passwordHash: String
     var fullName: String
     var email: String
+    
+    
 }

@@ -43,11 +43,8 @@ extension Week {
                                 width: geometry.size.width,
                                 height: geometry.size.height
                             )
-//                            .safeAreaPadding()
                         }
-//                        .padding(.horizontal, -20)
                         .scrollDisabled(true)
-//                        .edgesIgnoringSafeArea(.vertical)
                         Spacer()
                     }
                 }

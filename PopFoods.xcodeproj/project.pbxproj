@@ -345,8 +345,9 @@
 			children = (
 				5E3611342B5F17F40021675F /* Main */,
 				5E36112B2B5F16DF0021675F /* Home */,
-				5E36113B2B5F1DD80021675F /* Week */,
 				5E9DF8202B614D6500DA2602 /* Recipes */,
+				5E36113B2B5F1DD80021675F /* Week */,
+				5E3611402B5F1EB10021675F /* Basket */,
 				EF854DC52B69AD0B0042E5D1 /* User */,
 			);
 			path = Flows;
@@ -390,7 +391,6 @@
 				EF0C03DB2B75BA760010B352 /* RecipesStubs.swift */,
 				EFDABCD32B759CA5003F1217 /* Calender */,
 				EF0C03D82B7598940010B352 /* RecipeCell */,
-				5E3611402B5F1EB10021675F /* Basket */,
 			);
 			path = Week;
 			sourceTree = "<group>";

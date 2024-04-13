@@ -9,10 +9,6 @@ import Foundation
 
 extension Main {
     final class ViewModel: ObservableObject {
-        @Published var selectedTab: Int = 0 {
-            didSet {
-                print(selectedTab)
-            }
-        }
+        @Published var selectedTab: Int = 0
 	}
 }

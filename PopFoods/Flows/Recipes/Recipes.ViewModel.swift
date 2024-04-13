@@ -6,20 +6,34 @@
 //
 
 import Foundation
+import SwiftData
+import StringExtenstions
 
 extension Recipes {
+    @MainActor
 	final class ViewModel: ObservableObject {
 		let name: String = "Dishes"
 		let tabBarImageName: String = "fork.knife"
         
-        var recipes: [String?: [RecipeDTO]] = [
-            Date().dayBefore.getDay: RecipesStubs().recipes.shuffled(),
-            Date().getDay: RecipesStubs().recipes,
-            Date().dayAfter.getDay: RecipesStubs().recipes.shuffled()
-        ]
+        var weeks: [Date] = Date().datesOfWeek(.currentAndNextOne)
         
-        var favoriteRecipes: [RecipeDTO] = [
-            
-        ]
+        @Published var searchText = ""
+        @Published var pickerOptions: [String] = ["Завтрак", "Обед", "Ужин"]
+        @Published var selectedOption: String = ""
+        @Published var isEditing = false
+        
+        lazy var recipes: [RecipeDTO] = {
+            var recipes: [RecipeDTO] = []
+            do {
+                let container = try ModelContainer(for: RecipeDTO.self)
+                let descriptor = FetchDescriptor<RecipeDTO>()
+                recipes = try container.mainContext.fetch(descriptor)
+            } catch let err {
+                print(err)
+            }
+            return recipes
+        }()
+        
+        var favoriteRecipes: [RecipeDTO] = []
 	}
 }

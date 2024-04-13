@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 import DesignSystem
 
 extension Recipes {
@@ -14,20 +15,32 @@ extension Recipes {
         @StateObject var viewModel: ViewModel = ViewModel()
         @EnvironmentObject var appvm: AppViewModel
         
+        @State var selectedRecipe: RecipeDTO?
         @State private var showingFilterSheet = false
         
         var body: some View {
             NavigationStack {
                 VStack {
                     header
+                    Calender(
+                        data: viewModel.weeks,
+                        selectedDay: $appvm.selectedDay
+                    )
+                    
+                    RoundedPickerView(
+                        selectedValue: $viewModel.selectedOption,
+                        options: viewModel.pickerOptions
+                    )
+                    .frame(height: 32)
+                    .padding(.horizontal, 8)
                     GeometryReader { geometry in
                         ScrollView(.vertical) {
                             List {
-                                ForEach(viewModel.recipes[appvm.selectedDay.getDay] ?? []) { data in
+                                ForEach(viewModel.recipes) { data in
                                     ZStack(alignment: .bottomTrailing) {
                                         RecipeCell(data: data)
                                             .onTapGesture {
-//                                                selectedRecipe = data
+                                                selectedRecipe = data
                                             }
                                         Button(action: {
                                             
@@ -55,6 +68,9 @@ extension Recipes {
                     }
                 }
             }
+            .sheet(item: $selectedRecipe) { recipe in
+                ScreenRecipe(data: recipe)
+            }
             .tabItem {
                 TabItem(
                     title: viewModel.name,
@@ -76,11 +92,30 @@ private extension Recipes.Screen {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 20, height: 20)
             })
-            .offset(x: 15)
             .sheet(isPresented: $showingFilterSheet) {
                 RecipeFilter.FilterView()
-
+                
             }
+            Spacer()
+            TextField("Поиск", text: $viewModel.searchText, onEditingChanged: {
+                viewModel.isEditing = $0
+            })
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .overlay(
+                    HStack {
+                        Spacer()
+                        // Кнопка "Очистить", когда текстовое поле активно и текст не пустой
+                        if viewModel.isEditing && !viewModel.searchText.isEmpty {
+                            Button(action: {
+                                viewModel.searchText = ""
+                            }) {
+                                Image(systemName: "multiply.circle.fill")
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                    }
+                        .padding(.trailing, 8)
+                )
             Spacer()
             Button(action: {
                 
@@ -90,8 +125,8 @@ private extension Recipes.Screen {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 25, height: 25)
             })
-            .offset(x: -15)
         }
+        .padding(.horizontal, 15)
     }
 }
 
