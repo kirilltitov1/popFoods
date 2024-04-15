@@ -17,6 +17,7 @@ extension Recipes {
         
         @State var selectedRecipe: RecipeDTO?
         @State private var showingFilterSheet = false
+        @State private var isDatePickerPresented = false
         
         var body: some View {
             NavigationStack {
@@ -26,7 +27,6 @@ extension Recipes {
                         data: viewModel.weeks,
                         selectedDay: $appvm.selectedDay
                     )
-                    
                     RoundedPickerView(
                         selectedValue: $viewModel.selectedOption,
                         options: viewModel.pickerOptions
@@ -100,31 +100,40 @@ private extension Recipes.Screen {
             TextField("Поиск", text: $viewModel.searchText, onEditingChanged: {
                 viewModel.isEditing = $0
             })
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .overlay(
-                    HStack {
-                        Spacer()
-                        // Кнопка "Очистить", когда текстовое поле активно и текст не пустой
-                        if viewModel.isEditing && !viewModel.searchText.isEmpty {
-                            Button(action: {
-                                viewModel.searchText = ""
-                            }) {
-                                Image(systemName: "multiply.circle.fill")
-                                    .foregroundColor(.gray)
-                            }
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .overlay(
+                HStack {
+                    Spacer()
+                    if viewModel.isEditing && !viewModel.searchText.isEmpty {
+                        Button(action: {
+                            viewModel.searchText = ""
+                        }) {
+                            Image(systemName: "multiply.circle.fill")
+                                .foregroundColor(.gray)
                         }
                     }
-                        .padding(.trailing, 8)
-                )
+                }
+                    .padding(.trailing, 8)
+            )
             Spacer()
             Button(action: {
-                
+                self.isDatePickerPresented.toggle()
             }, label: {
                 Image(systemName: "calendar")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 25, height: 25)
             })
+            .popover(isPresented: $isDatePickerPresented) {
+                DatePicker(
+                    "Выберите дату",
+                    selection: $viewModel.selectedDate,
+                    displayedComponents: [.date]
+                )
+                .datePickerStyle(GraphicalDatePickerStyle())
+                .padding()
+                .frame(width: 300)
+            }
         }
         .padding(.horizontal, 15)
     }
@@ -133,4 +142,5 @@ private extension Recipes.Screen {
 #Preview {
     Recipes.Screen()
         .environmentObject(AppViewModel())
+        .modelContainer(appContainer)
 }

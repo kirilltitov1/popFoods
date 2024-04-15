@@ -21,6 +21,7 @@ extension Recipes {
         @Published var pickerOptions: [String] = ["Завтрак", "Обед", "Ужин"]
         @Published var selectedOption: String = ""
         @Published var isEditing = false
+        @Published var selectedDate = Date()
         
         lazy var recipes: [RecipeDTO] = {
             var recipes: [RecipeDTO] = []

@@ -65,4 +65,5 @@ extension Week {
 #Preview {
     Week.Screen()
         .environmentObject(AppViewModel())
+        .modelContainer(appContainer)
 }

@@ -41,4 +41,5 @@ extension Main {
 #Preview {
     Main.Screen()
         .environmentObject(AppViewModel())
+        .modelContainer(appContainer)
 }

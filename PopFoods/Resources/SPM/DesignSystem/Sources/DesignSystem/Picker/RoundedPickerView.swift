@@ -23,7 +23,6 @@ public struct RoundedPickerView: View {
         HStack(spacing: 0) {
             ForEach(options, id: \.self) { option in
                 ZStack {
-                    // Фон кнопки
                     if self.selectedValue == option {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color.blue)
@@ -31,30 +30,37 @@ public struct RoundedPickerView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color.clear)
                             .background(
-                                RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 2)
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color.blue, lineWidth: 2)
                             )
                     }
-                    // Текст кнопки
                     Button(action: {
-                        self.selectedValue = option
+                        if selectedValue == option {
+                            selectedValue = ""
+                        } else {
+                            self.selectedValue = option
+                        }
                     }) {
-                        Text(option)
-                            .foregroundColor(self.selectedValue == option ? .white : .blue)
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(selectedValue == option ? Color.blue : Color.clear)
+                            Text(option)
+                                .foregroundColor(selectedValue == option ? .white : .blue)
+                        }
                     }
                 }
             }
         }
-        .cornerRadius(10)
     }
 }
 
 #Preview {
     // Имитация ViewModel с тестовыми данными для превью
     let testData = ["Опция 1", "Опция 2", "Опция 3"]
-    @State var selectedPreviewValue = "Опция 1"
+//    @State var selectedPreviewValue = "Опция 1"
     
     return RoundedPickerView(
-        selectedValue: $selectedPreviewValue,
+        selectedValue: .constant("Опция 1"),
         options: testData
     )
     .previewLayout(.sizeThatFits)

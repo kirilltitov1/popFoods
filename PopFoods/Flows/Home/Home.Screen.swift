@@ -37,4 +37,6 @@ extension Home {
 
 #Preview {
     Home.Screen()
+        .environmentObject(AppViewModel())
+        .modelContainer(appContainer)
 }
